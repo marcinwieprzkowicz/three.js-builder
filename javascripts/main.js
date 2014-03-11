@@ -4,7 +4,7 @@
 
 
 requirejs.config({
-	baseUrl: "/",
+	baseUrl: "./",
 	paths: {
 		"text": "javascripts/bower/requirejs-text/text",
 		"JSZip": "javascripts/bower/jszip/dist/jszip",
