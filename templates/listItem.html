@@ -1,0 +1,16 @@
+<li>
+	<div class="rowWrap">
+		<div class="field">
+			<label for={{fieldId}}>
+				<span class="checkbox">{{name}}</span>
+			</label>
+			<input type="checkbox" id="{{fieldId}}" value="{{fieldId}}" {{isModule}}class="module"{{/isModule}} />
+		</div>
+		<div class="name{{isExpandable}} expandable{{/isExpandable}}">
+			{{name}}
+			{{isExpandable}}
+				<em class="icon i-arrow"></em>
+			{{/isExpandable}}
+		</div>
+	</div>
+</li>

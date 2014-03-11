@@ -1,0 +1,15 @@
+{
+	"name": "threejs-builder",
+	"version": "0.0.1",
+	"authors": [
+		"Marcin Wieprzkowicz <marcin.wieprzkowicz@gmail.com>"
+	],
+	"description": "Custom builder for three.js library",
+	"private": true,
+	"dependencies": {
+		"requirejs": "~2.1.10",
+		"requirejs-text": "~2.0.10",
+		"jszip": "git@github.com:Stuk/jszip.git#2.2.0",
+		"uglifyjs2": "git@github.com:mishoo/UglifyJS2.git#2.4.12"
+	}
+}

@@ -1,0 +1,341 @@
+/*!
+ *
+ * Screen.
+ *
+ * @author: Marcin Wieprzkowicz (marcin.wieprzkowicz@gmail.com)
+ *
+ */
+/*!
+ *
+ * Mixins.
+ *
+ * @author: Marcin Wieprzkowicz (marcin.wieprzkowicz@gmail.com)
+ *
+ */
+body, head, h1, h2, h3, h4, h5, h6, p, blockquote, ul, ol, li, dd, dt, dl, form, fieldset, input, textarea, button {
+  border: none;
+  font-size: 1em;
+  font-weight: normal;
+  line-height: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
+legend {
+  display: none; }
+
+html,
+body {
+  height: 100%; }
+
+body {
+  background-color: #f1f1f1;
+  color: #111;
+  font-family: Helvetica, Arial, Verdana, sans-serif;
+  font-size: 10px; }
+
+.mCont {
+  margin: 0 auto;
+  position: relative;
+  width: 960px; }
+
+a {
+  text-decoration: none; }
+
+.clearfix:after {
+  display: block;
+  content: " ";
+  clear: both;
+  height: 0;
+  font-size: 0;
+  overflow: hidden;
+  width: 100%; }
+
+.icon {
+  background: url(../images/icons.png) no-repeat;
+  display: block; }
+
+.i-arrow {
+  background-position: -17px 0;
+  height: 16px;
+  width: 9px; }
+
+/*= wrapper
+---------------------------------------------------------------------------- */
+#main-wrapper {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -200px; }
+  #main-wrapper:after {
+    content: " ";
+    height: 200px;
+    display: block;
+    width: 100%; }
+
+/*= header
+---------------------------------------------------------------------------- */
+#header {
+  padding: 20px 0; }
+  #header h1 {
+    color: #444;
+    font-size: 2.5em;
+    font-family: "inconsolata";
+    margin-bottom: 20px; }
+    #header h1 a {
+      color: inherit;
+      line-height: 1.4em; }
+    #header h1 .subTitle {
+      color: #1292c9;
+      font-size: 50%;
+      vertical-align: super; }
+      #header h1 .subTitle:hover {
+        text-decoration: underline; }
+  #header .version {
+    font-size: 1.2em;
+    line-height: 1.4em;
+    position: absolute;
+    right: 0;
+    top: 0; }
+    #header .version label {
+      margin-right: 10px; }
+    #header .version select {
+      min-width: 80px; }
+  #header p {
+    float: left;
+    font-size: 1.4em;
+    line-height: 1.4em;
+    margin-bottom: 10px; }
+  #header .legend {
+    float: right; }
+    #header .legend li {
+      margin-top: 5px; }
+      #header .legend li:first-child {
+        margin-top: 0; }
+      #header .legend li .rowWrap {
+        font-size: 1.2em;
+        line-height: 1.5em; }
+
+/*= content
+---------------------------------------------------------------------------- */
+.checkbox {
+  border: solid 2px #b8b8b8;
+  border-radius: 3px;
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  text-indent: -900em;
+  vertical-align: top; }
+
+.checkedAsDependency > .rowWrap .checkbox {
+  background-color: #3d9970;
+  border-color: #3d9970; }
+.checkedAsDependency > .rowWrap .name {
+  color: #3d9970; }
+
+.checkedAsRequired > .rowWrap .checkbox {
+  background-color: #1292c9;
+  border-color: #001f3f; }
+.checkedAsRequired > .rowWrap .name {
+  color: #1292c9; }
+
+#content {
+  color: #666;
+  padding-bottom: 40px; }
+  #content .modulesList li.open > .subList {
+    display: block; }
+  #content .modulesList li.open > .rowWrap .i-arrow {
+    background-position: 0 0;
+    height: 9px;
+    width: 16px;
+    top: 32px; }
+  #content .modulesList li .rowWrap {
+    border: 1px solid #d1d1d1;
+    margin-top: -1px;
+    position: relative; }
+  #content .modulesList > li {
+    margin-bottom: 10px; }
+    #content .modulesList > li > .rowWrap {
+      margin: 0; }
+  #content .modulesList .subList {
+    display: none;
+    margin: 0 0 0 70px; }
+  #content .modulesList .field {
+    height: 70px;
+    left: 0;
+    position: absolute;
+    width: 70px;
+    top: 0; }
+    #content .modulesList .field label {
+      background-color: #f5f5f5;
+      border-right: 1px solid #d1d1d1;
+      cursor: pointer;
+      display: block;
+      height: inherit;
+      -webkit-tap-highlight-color: transparent;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none; }
+      #content .modulesList .field label .checkbox {
+        left: 24px;
+        position: relative;
+        top: 25px; }
+    #content .modulesList .field input {
+      display: none; }
+  #content .modulesList .name {
+    background-color: #fff;
+    display: block;
+    font-size: 2em;
+    line-height: 70px;
+    height: inherit;
+    padding-left: 85px;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; }
+    #content .modulesList .name.expandable {
+      cursor: pointer; }
+  #content .modulesList .i-arrow {
+    position: absolute;
+    right: 30px;
+    top: 27px; }
+
+/*= footer
+---------------------------------------------------------------------------- */
+#footer {
+  background-color: #BDD4DF;
+  border-top: 1px solid #7E7E7E;
+  height: 200px; }
+  #footer .mCont {
+    padding-top: 20px; }
+  #footer h2 {
+    font-size: 1.4em;
+    font-weight: bold;
+    line-height: 1.4em;
+    margin-bottom: 10px; }
+  #footer .otherProjects li {
+    float: left;
+    margin-left: 40px; }
+    #footer .otherProjects li:first-child {
+      margin-left: 0; }
+    #footer .otherProjects li a {
+      border-radius: 4px;
+      display: block;
+      overflow: hidden;
+      position: relative; }
+      #footer .otherProjects li a:before {
+        border-radius: 4px;
+        display: block;
+        content: " ";
+        height: 100%;
+        position: absolute;
+        width: 100%;
+        -webkit-box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.3);
+        -moz-box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.3);
+        box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.3); }
+
+/*= buttons
+---------------------------------------------------------------------------- */
+.blueButton {
+  border: 1px solid #107ead;
+  border-radius: 3px;
+  color: #fff;
+  display: block;
+  font-size: 16px;
+  line-height: 1.4em;
+  outline: none;
+  padding: 8px 10px;
+  margin: 0 auto;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  background-image: -webkit-linear-gradient(top, #56b1d8 0%, #1995ca 100%);
+  background-image: -moz-linear-gradient(top, #56b1d8 0%, #1995ca 100%);
+  background-image: -ms-linear-gradient(top, #56b1d8 0%, #1995ca 100%);
+  background-image: linear-gradient(to bottom, #56b1d8 0%, #1995ca 100%);
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), 0 1px 3px #cccccc;
+  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), 0 1px 3px #cccccc;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), 0 1px 3px #cccccc; }
+  .blueButton:active {
+    background-image: -webkit-linear-gradient(top, #1995ca 0%, #48abd5 100%);
+    background-image: -moz-linear-gradient(top, #1995ca 0%, #48abd5 100%);
+    background-image: -ms-linear-gradient(top, #1995ca 0%, #48abd5 100%);
+    background-image: linear-gradient(to bottom, #1995ca 0%, #48abd5 100%);
+    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5);
+    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5); }
+
+/*= progressBar
+---------------------------------------------------------------------------- */
+.progressBar {
+  background-color: #444;
+  border-radius: 20px;
+  height: 15px;
+  margin-top: 10px;
+  padding: 1px;
+  position: relative;
+  -webkit-box-shadow: inset 0 -1px 1px rgba(255, 255, 255, 0.3);
+  -moz-box-shadow: inset 0 -1px 1px rgba(255, 255, 255, 0.3);
+  box-shadow: inset 0 -1px 1px rgba(255, 255, 255, 0.3); }
+  .progressBar > span {
+    background-color: #1292c9;
+    border-radius: 20px;
+    display: block;
+    height: inherit;
+    overflow: hidden;
+    position: relative;
+    width: 0%;
+    -webkit-box-shadow: inset 0 2px 9px rgba(255, 255, 255, 0.3), inset 0 -2px 6px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: inset 0 2px 9px rgba(255, 255, 255, 0.3), inset 0 -2px 6px rgba(0, 0, 0, 0.4);
+    box-shadow: inset 0 2px 9px rgba(255, 255, 255, 0.3), inset 0 -2px 6px rgba(0, 0, 0, 0.4); }
+    .progressBar > span > span {
+      background-size: 50px 50px;
+      border-radius: 20px;
+      height: 100%;
+      overflow: hidden;
+      position: absolute;
+      width: 100%;
+      z-index: 1;
+      background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
+      background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
+      background-image: -ms-linear-gradient(-45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
+      -webkit-animation: progressBarAnim 2s linear infinite;
+      -moz-animation: progressBarAnim 2s linear infinite;
+      -ms-animation: progressBarAnim 2s linear infinite;
+      animation: progressBarAnim 2s linear infinite; }
+
+@-webkit-keyframes progressBarAnim {
+  0% {
+    background-position: 0 0; }
+
+  100% {
+    background-position: 50px 50px; } }
+
+@-moz-keyframes progressBarAnim {
+  0% {
+    background-position: 0 0; }
+
+  100% {
+    background-position: 50px 50px; } }
+
+@-ms-keyframes progressBarAnim {
+  0% {
+    background-position: 0 0; }
+
+  100% {
+    background-position: 50px 50px; } }
+
+@keyframes progressBarAnim {
+  0% {
+    background-position: 0 0; }
+
+  100% {
+    background-position: 50px 50px; } }
+
+/*= popup
+---------------------------------------------------------------------------- */
+.popupCover .popupContent p {
+  font-size: 1.2em;
+  line-height: 1.4em; }

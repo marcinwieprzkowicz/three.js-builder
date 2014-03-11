@@ -1,0 +1,70 @@
+/*!
+ *
+ * Mixins.
+ *
+ * @author: Marcin Wieprzkowicz (marcin.wieprzkowicz@gmail.com)
+ *
+ */
+
+
+@mixin no-touchie(){
+	-webkit-tap-highlight-color: transparent;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+@mixin box-sizing($type) {
+	-webkit-box-sizing: $type;
+	-moz-box-sizing: $type;
+	box-sizing: $type;
+}
+
+@mixin box-shadow($shadows...){
+	-webkit-box-shadow: $shadows;
+	-moz-box-shadow: $shadows;
+	box-shadow: $shadows;
+}
+
+@mixin linear-gradient($colors, $direction: top){
+	background-image: -webkit-linear-gradient($direction, #{$colors});
+	background-image: -moz-linear-gradient($direction, #{$colors});
+	background-image: -ms-linear-gradient($direction, #{$colors});
+	@if $direction == top {
+		background-image: linear-gradient(to bottom, #{$colors});
+	}
+	@if $direction == left {
+		background-image: linear-gradient(to right, #{$colors});
+	}
+}
+
+@mixin transition($transitions...){
+	-webkit-transition: $transitions;
+	-moz-transition: $transitions;
+	-ms-transition: $transitions;
+	transition: $transitions;
+}
+
+@mixin animation($animation){
+	-webkit-animation: $animation;
+	-moz-animation: $animation;
+	-ms-animation: $animation;
+	animation: $animation;
+}
+
+@mixin keyframes($name) {
+	@-webkit-keyframes #{$name} {
+		@content;
+	}
+	@-moz-keyframes #{$name} {
+		@content;
+	}
+	@-ms-keyframes #{$name} {
+		@content;
+	}
+	@keyframes #{$name} {
+		@content;
+	}
+}

@@ -1,0 +1,54 @@
+/*!
+ *
+ * Popup.
+ *
+ * @author: Marcin Wieprzkowicz (marcin.wieprzkowicz@gmail.com)
+ *
+ */
+/*!
+ *
+ * Mixins.
+ *
+ * @author: Marcin Wieprzkowicz (marcin.wieprzkowicz@gmail.com)
+ *
+ */
+.popupVisible {
+  overflow: hidden; }
+  .popupVisible .popupCover {
+    display: block; }
+
+.popupCover {
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%; }
+  .popupCover .popupWrap {
+    background-color: #fff;
+    border-radius: 4px;
+    left: 50%;
+    margin-left: -250px;
+    position: absolute;
+    top: 50%;
+    -webkit-box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5); }
+    .popupCover .popupWrap .popupClose {
+      background: url(../images/icons.png) no-repeat 0 -17px;
+      display: none;
+      height: 20px;
+      position: absolute;
+      right: -10px;
+      text-indent: -900em;
+      width: 20px;
+      top: -10px; }
+    .popupCover .popupWrap .popupContent {
+      margin: 20px;
+      max-height: 300px;
+      overflow-y: auto;
+      width: 500px;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box; }

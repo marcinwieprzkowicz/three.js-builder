@@ -1,1 +1,86 @@
-Example text
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Inconsolata" type="text/css" />
+		<link rel="stylesheet" href="stylesheets/normalize.css" type="text/css" media="screen, projection, print" />
+		<link rel="stylesheet" href="stylesheets/popup.css" type="text/css" media="screen, projection" />
+		<link rel="stylesheet" href="stylesheets/screen.css" type="text/css" media="screen, projection" />
+
+		<title>ThreeJS Builder</title>
+	</head>
+	<body>
+		<div id="main-wrapper">
+			<div id="header" class="clearfix">
+				<div class="mCont">
+					<h1>
+						<a href="/" title="three.js builder" class="logo">three.js unofficial builder</a>
+						<a href="/" title="alpha" class="subTitle">alpha 0.01</a>
+					</h1>
+
+					<div class="version">
+						<label for="version">Choose version:</label>
+						<select id="version">
+							<option value="r65" selected="selected">r65</option>
+						</select>
+					</div>
+
+					<p>This page will generate a single JavaScript file, containing the chosen components of three.js library.</p>
+
+					<ul class="legend">
+						<li class="checkedAsRequired">
+							<div class="rowWrap">
+								<span class="checkbox">Required</span>
+								Required
+							</div>
+						</li>
+						<li class="checkedAsDependency">
+							<div class="rowWrap">
+								<span class="checkbox">Dependency</span>
+								Dependency
+							</div>
+						</li>
+					</ul> <!-- /legend -->
+				</div> <!-- /mCont -->
+			</div> <!-- /header -->
+
+			<div id="content">
+				<div class="mCont">
+
+				</div>
+			</div> <!-- /content -->
+		</div> <!-- /wrapper -->
+
+		<div id="footer">
+			<div class="mCont">
+				<h2>Check out my other projects:</h2>
+				<ul class="otherProjects clearfix">
+					<li>
+						<a href="https://github.com/marcinwieprzkowicz/dead-hollow" title="dead hollow">
+							<img src="images/other-projects/dead-hollow.png" alt="dead hollow" />
+						</a>
+					</li>
+					<li>
+						<a href="https://github.com/marcinwieprzkowicz/png-to-css" title="PNG to CSS">
+							<img src="images/other-projects/png-to-css.png" alt="PNG to CSS" />
+						</a>
+					</li>
+					<li>
+						<a href="https://github.com/marcinwieprzkowicz/take-screenshot" title="take screenshot">
+							<img src="images/other-projects/take-screenshot.png" alt="take screenshot" />
+						</a>
+					</li>
+					<li>
+						<a href="https://github.com/marcinwieprzkowicz/validate-chosen" title="validate chosen">
+							<img src="images/other-projects/validate-chosen.png" alt="validate chosen" />
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div> <!-- /footer -->
+
+		<script src="javascripts/static/uglifyjs.js"></script>
+		<script src="javascripts/static/uglifyjs-minify.js"></script>
+		<script data-main="javascripts/main" src="javascripts/bower/requirejs/require.js"></script>
+	</body>
+</html>
