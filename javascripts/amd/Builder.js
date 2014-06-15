@@ -271,6 +271,7 @@ define([
 		// change version
 		event.on(this.element.versionNode, "change", function (evt) {
 			var version = query.getSelected(evt.target);
+			this.selectedVersion = version;
 
 			this._cleanList();
 			this.loadVersion(version);
