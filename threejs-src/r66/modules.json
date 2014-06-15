@@ -107,7 +107,7 @@
 				"objects/Mesh",
 				"objects/Line",
 				"objects/Sprite",
-				"renderers/renderables/RenderableFace3",
+				"renderers/renderables/RenderableFace",
 				"renderers/renderables/RenderableLine",
 				"renderers/renderables/RenderableObject",
 				"renderers/renderables/RenderableSprite",
@@ -433,7 +433,7 @@
 				"renderers/renderables/RenderableVertex",
 				"renderers/renderables/RenderableSprite",
 				"renderers/renderables/RenderableLine",
-				"renderers/renderables/RenderableFace3",
+				"renderers/renderables/RenderableFace",
 				"cameras/Camera",
 				"lights/AmbientLight",
 				"lights/DirectionalLight",
@@ -532,7 +532,7 @@
 					"math/Vector3",
 					"math/Vector4"
 				],
-				"RenderableFace3": [
+				"RenderableFace": [
 					"renderers/renderables/RenderableVertex",
 					"math/Vector3"
 				],
