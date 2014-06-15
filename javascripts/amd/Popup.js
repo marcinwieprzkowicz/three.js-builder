@@ -100,7 +100,7 @@ define([
 		event.on(this.domNode, "click", function (evt) {
 			event.stop(evt);
 
-			if (this.domNode.classList.contains("closable")) {
+			if (evt.target.classList.contains("closable")) {
 				this.hide();
 			}
 		}.bind(this));
