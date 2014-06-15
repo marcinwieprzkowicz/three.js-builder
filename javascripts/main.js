@@ -10,7 +10,8 @@ requirejs.config({
 		"JSZip": "javascripts/bower/jszip/dist/jszip",
 		"utils": "javascripts/utils",
 		"amd": "javascripts/amd"
-	}
+	},
+	waitSeconds: 0
 });
 
 
