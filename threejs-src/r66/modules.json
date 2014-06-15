@@ -1,0 +1,973 @@
+{
+	"required": [
+		"Three"
+	],
+	"dependencies": {
+		"math": {
+			"Color": [],
+			"Quaternion": [
+				"math/Euler"
+			],
+			"Vector2": [],
+			"Vector3": [
+				"math/Euler",
+				"math/Quaternion",
+				"math/Math"
+			],
+			"Vector4": [],
+			"Euler": [
+				"math/Quaternion"
+			],
+			"Line3": [
+				"math/Vector3",
+				"math/Math"
+			],
+			"Box2": [
+				"math/Vector2"
+			],
+			"Box3": [
+				"math/Vector3",
+				"math/Sphere"
+			],
+			"Matrix3": [
+				"math/Vector3"
+			],
+			"Matrix4": [
+				"math/Vector3",
+				"math/Euler",
+				"math/Math"
+			],
+			"Ray": [
+				"math/Vector3"
+			],
+			"Sphere": [
+				"math/Vector3",
+				"math/Box3"
+			],
+			"Frustum": [
+				"math/Vector3",
+				"math/Sphere",
+				"math/Plane"
+			],
+			"Plane": [
+				"math/Vector3",
+				"math/Matrix3"
+			],
+			"Math": [],
+			"Spline": [
+				"math/Vector3"
+			],
+			"Triangle": [
+				"math/Vector3",
+				"math/Plane"
+			],
+			"Vertex": [],
+			"UV": [
+				"math/Vector2"
+			]
+		},
+
+		"core": {
+			"Clock": [],
+			"EventDispatcher": [],
+			"Raycaster": [
+				"math/Ray",
+				"math/Sphere",
+				"math/Plane",
+				"math/Vector3",
+				"math/Matrix4",
+				"objects/Sprite",
+				"objects/LOD",
+				"objects/Mesh",
+				"objects/Line",
+				"core/BufferGeometry",
+				"core/Geometry",
+				"materials/MeshFaceMaterial"
+			],
+			"Object3D": [
+				"core/EventDispatcher",
+				"math/Math",
+				"math/Vector3",
+				"math/Euler",
+				"math/Quaternion",
+				"math/Matrix4",
+				"scenes/Scene"
+			],
+			"Projector": [
+				"math/Box3",
+				"math/Frustum",
+				"math/Vector3",
+				"math/Vector4",
+				"math/Matrix4",
+				"core/Raycaster",
+				"core/Geometry",
+				"core/BufferGeometry",
+				"lights/Light",
+				"materials/MeshFaceMaterial",
+				"objects/Mesh",
+				"objects/Line",
+				"objects/Sprite",
+				"renderers/renderables/RenderableFace3",
+				"renderers/renderables/RenderableLine",
+				"renderers/renderables/RenderableObject",
+				"renderers/renderables/RenderableSprite",
+				"renderers/renderables/RenderableVertex"
+			],
+			"Face3": [
+				"math/Vector3",
+				"math/Color"
+			],
+			"Face4": [
+				"core/Face3"
+			],
+			"BufferGeometry": [
+				"core/EventDispatcher",
+				"math/Math",
+				"math/Matrix3",
+				"math/Box3",
+				"math/Vector3",
+				"math/Sphere"
+			],
+			"Geometry": [
+				"core/EventDispatcher",
+				"math/Math",
+				"math/Matrix3",
+				"math/Box3",
+				"math/Vector2",
+				"math/Vector3",
+				"math/Vector4",
+				"math/Sphere"
+			],
+			"Geometry2": [
+				"core/BufferGeometry"
+			]
+		},
+
+		"cameras": {
+			"Camera": [
+				"core/Object3D",
+				"math/Matrix4"
+			],
+			"OrthographicCamera": [
+				"cameras/Camera"
+			],
+			"PerspectiveCamera": [
+				"cameras/Camera",
+				"math/Math"
+			]
+		},
+
+		"lights": {
+			"Light": [
+				"core/Object3D",
+				"math/Color"
+			],
+			"AmbientLight": [
+				"lights/Light"
+			],
+			"AreaLight": [
+				"lights/Light",
+				"math/Vector3"
+			],
+			"DirectionalLight": [
+				"lights/Light",
+				"core/Object3D",
+				"math/Vector3"
+			],
+			"HemisphereLight": [
+				"lights/Light",
+				"math/Color"
+			],
+			"PointLight": [
+				"lights/Light"
+			],
+			"SpotLight": [
+				"lights/Light",
+				"core/Object3D"
+			]
+		},
+
+		"loaders": {
+			"Loader": [
+				"materials/ShaderMaterial",
+				"extras/ImageUtils",
+				"textures/Texture",
+				"renderers/shaders/ShaderLib",
+				"renderers/shaders/UniformsUtils"
+			],
+			"XHRLoader": [
+				"loaders/LoadingManager"
+			],
+			"ImageLoader": [
+				"loaders/LoadingManager"
+			],
+			"JSONLoader": [
+				"loaders/Loader",
+				"core/Geometry",
+				"core/Face3",
+				"math/Vector4",
+				"math/Vector3",
+				"math/Vector2",
+				"math/Color"
+			],
+			"LoadingManager": [],
+			"BufferGeometryLoader": [
+				"loaders/LoadingManager",
+				"loaders/XHRLoader",
+				"core/BufferGeometry",
+				"math/Sphere",
+				"math/Vector3"
+			],
+			"Geometry2Loader": [
+				"loaders/LoadingManager",
+				"loaders/XHRLoader",
+				"core/Geometry2",
+				"math/Sphere",
+				"math/Vector3"
+			],
+			"MaterialLoader": [
+				"loaders/LoadingManager",
+				"loaders/XHRLoader"
+			],
+			"ObjectLoader": [
+				"loaders/LoadingManager",
+				"loaders/XHRLoader",
+				"loaders/JSONLoader",
+				"loaders/Geometry2Loader",
+				"loaders/BufferGeometryLoader",
+				"loaders/MaterialLoader",
+				"extras/geometries/PlaneGeometry",
+				"extras/geometries/BoxGeometry",
+				"extras/geometries/CircleGeometry",
+				"extras/geometries/CylinderGeometry",
+				"extras/geometries/SphereGeometry",
+				"extras/geometries/IcosahedronGeometry",
+				"extras/geometries/TorusGeometry",
+				"extras/geometries/TorusKnotGeometry",
+				"math/Matrix4",
+				"scenes/Scene",
+				"cameras/PerspectiveCamera",
+				"cameras/OrthographicCamera",
+				"lights/AmbientLight",
+				"lights/DirectionalLight",
+				"lights/PointLight",
+				"lights/SpotLight",
+				"lights/HemisphereLight",
+				"core/Object3D",
+				"objects/Mesh",
+				"objects/Sprite"
+			],
+			"SceneLoader": [
+				"loaders/JSONLoader",
+				"loaders/XHRLoader",
+				"loaders/Loader",
+				"scenes/Scene",
+				"materials/ShaderMaterial",
+				"materials/MeshFaceMaterial",
+				"objects/SkinnedMesh",
+				"objects/MorphAnimMesh",
+				"objects/Mesh",
+				"lights/AmbientLight",
+				"lights/PointLight",
+				"lights/DirectionalLight",
+				"lights/SpotLight",
+				"lights/AreaLight",
+				"math/Euler",
+				"math/Vector3",
+				"core/Object3D",
+				"cameras/PerspectiveCamera",
+				"cameras/OrthographicCamera",
+				"scenes/Fog",
+				"scenes/FogExp2",
+				"extras/geometries/BoxGeometry",
+				"extras/geometries/PlaneGeometry",
+				"extras/geometries/SphereGeometry",
+				"extras/geometries/CylinderGeometry",
+				"extras/geometries/TorusGeometry",
+				"extras/geometries/IcosahedronGeometry",
+				"extras/ImageUtils",
+				"renderers/shaders/ShaderLib",
+				"renderers/shaders/UniformsUtils"
+			],
+			"TextureLoader": [
+				"loaders/LoadingManager",
+				"loaders/ImageLoader",
+				"textures/Texture"
+			]
+		},
+
+		"materials": {
+			"Material": [
+				"core/EventDispatcher",
+				"math/Math",
+				"math/Color",
+				"math/Vector3"
+			],
+			"LineBasicMaterial": [
+				"math/Color",
+				"materials/Material"
+			],
+			"LineDashedMaterial": [
+				"math/Color",
+				"materials/Material"
+			],
+			"MeshBasicMaterial": [
+				"math/Color",
+				"materials/Material"
+			],
+			"MeshLambertMaterial": [
+				"math/Color",
+				"math/Vector3",
+				"materials/Material"
+			],
+			"MeshPhongMaterial": [
+				"math/Color",
+				"math/Vector3",
+				"math/Vector2",
+				"materials/Material"
+			],
+			"MeshDepthMaterial": [
+				"materials/Material"
+			],
+			"MeshNormalMaterial": [
+				"materials/Material"
+			],
+			"MeshFaceMaterial": [],
+			"ParticleSystemMaterial": [
+				"math/Color",
+				"materials/Material"
+			],
+			"ShaderMaterial": [
+				"materials/Material",
+				"renderers/shaders/UniformsUtils"
+			],
+			"SpriteMaterial": [
+				"math/Color",
+				"materials/Material"
+			],
+			"SpriteCanvasMaterial": [
+				"math/Color",
+				"materials/Material"
+			]
+		},
+
+		"textures": {
+			"Texture": [
+				"core/EventDispatcher",
+				"math/Math",
+				"math/Vector2"
+			],
+			"CompressedTexture": [
+				"textures/Texture"
+			],
+			"DataTexture": [
+				"textures/Texture"
+			]
+		},
+
+		"objects": {
+			"ParticleSystem": [
+				"core/Object3D",
+				"core/Geometry",
+				"materials/ParticleSystemMaterial"
+			],
+			"Line": [
+				"core/Object3D",
+				"core/Geometry",
+				"materials/LineBasicMaterial"
+			],
+			"Mesh": [
+				"core/Object3D",
+				"core/Geometry",
+				"materials/MeshBasicMaterial"
+			],
+			"Bone": [
+				"core/Object3D",
+				"math/Matrix4"
+			],
+			"SkinnedMesh": [
+				"math/Matrix4",
+				"objects/Mesh",
+				"objects/Bone",
+				"core/Geometry",
+				"textures/DataTexture"
+			],
+			"MorphAnimMesh": [
+				"objects/Mesh",
+				"math/Math"
+			],
+			"LOD": [
+				"core/Object3D",
+				"math/Vector3"
+			],
+			"Sprite": [
+				"core/Geometry2",
+				"core/Object3D",
+				"materials/SpriteMaterial"
+			]
+		},
+
+		"scenes": {
+			"Scene": [
+				"core/Object3D",
+				"lights/Light",
+				"cameras/Camera",
+				"objects/Bone"
+			],
+			"Fog": [
+				"math/Color"
+			],
+			"FogExp2": [
+				"math/Color"
+			]
+		},
+
+		"renderers": {
+			"CanvasRenderer": [
+				"math/Math",
+				"core/Projector",
+				"math/Color",
+				"math/Box2",
+				"math/Vector3",
+				"math/Matrix3",
+				"renderers/renderables/RenderableVertex",
+				"renderers/renderables/RenderableSprite",
+				"renderers/renderables/RenderableLine",
+				"renderers/renderables/RenderableFace3",
+				"cameras/Camera",
+				"lights/AmbientLight",
+				"lights/DirectionalLight",
+				"lights/PointLight",
+				"materials/SpriteMaterial",
+				"materials/ParticleSystemMaterial",
+				"materials/SpriteCanvasMaterial",
+				"materials/LineBasicMaterial",
+				"materials/LineDashedMaterial",
+				"materials/MeshLambertMaterial",
+				"materials/MeshPhongMaterial",
+				"materials/MeshBasicMaterial",
+				"materials/MeshDepthMaterial",
+				"materials/MeshNormalMaterial",
+				"textures/DataTexture"
+			],
+			"shaders": {
+				"ShaderChunk": [],
+				"UniformsUtils": [
+					"math/Color",
+					"math/Vector2",
+					"math/Vector3",
+					"math/Vector4",
+					"math/Matrix4",
+					"textures/Texture"
+				],
+				"UniformsLib": [
+					"math/Color",
+					"math/Vector2",
+					"math/Vector4"
+				],
+				"ShaderLib": [
+					"renderers/shaders/UniformsUtils",
+					"renderers/shaders/UniformsLib",
+					"renderers/shaders/ShaderChunk",
+					"math/Color",
+					"math/Vector2",
+					"math/Vector3"
+				]
+			},
+			"WebGLRenderer": [
+				"math/Math",
+				"math/Color",
+				"math/Frustum",
+				"math/Matrix4",
+				"math/Matrix3",
+				"math/Vector4",
+				"math/Vector3",
+				"math/Vector2",
+				"core/Geometry",
+				"core/BufferGeometry",
+				"renderers/WebGLRenderTargetCube",
+				"renderers/shaders/ShaderLib",
+				"renderers/shaders/UniformsUtils",
+				"materials/MeshFaceMaterial",
+				"materials/MeshBasicMaterial",
+				"materials/MeshDepthMaterial",
+				"materials/ShaderMaterial",
+				"materials/MeshNormalMaterial",
+				"materials/MeshLambertMaterial",
+				"materials/MeshPhongMaterial",
+				"materials/LineBasicMaterial",
+				"materials/LineDashedMaterial",
+				"materials/ParticleSystemMaterial",
+				"objects/Mesh",
+				"objects/ParticleSystem",
+				"objects/Line",
+				"objects/Sprite",
+				"objects/SkinnedMesh",
+				"cameras/Camera",
+				"scenes/Fog",
+				"scenes/FogExp2",
+				"extras/objects/LensFlare",
+				"extras/objects/ImmediateRenderObject",
+				"extras/renderers/plugins/ShadowMapPlugin",
+				"extras/renderers/plugins/SpritePlugin",
+				"extras/renderers/plugins/LensFlarePlugin",
+				"lights/SpotLight",
+				"lights/DirectionalLight",
+				"lights/AmbientLight",
+				"lights/PointLight",
+				"lights/HemisphereLight",
+				"textures/Texture",
+				"textures/DataTexture",
+				"textures/CompressedTexture"
+			],
+			"WebGLRenderTarget": [
+				"math/Vector2",
+				"core/EventDispatcher"
+			],
+			"WebGLRenderTargetCube": [
+				"renderers/WebGLRenderTarget"
+			],
+			"renderables": {
+				"RenderableVertex": [
+					"math/Vector3",
+					"math/Vector4"
+				],
+				"RenderableFace3": [
+					"renderers/renderables/RenderableVertex",
+					"math/Vector3"
+				],
+				"RenderableObject": [],
+				"RenderableSprite": [
+					"math/Vector2"
+				],
+				"RenderableLine": [
+					"renderers/renderables/RenderableVertex",
+					"math/Color"
+				]
+			}
+		},
+
+		"extras": {
+			"GeometryUtils": [
+				"objects/Mesh",
+				"math/Math",
+				"math/Vector2",
+				"math/Vector3",
+				"math/Matrix3",
+				"math/Matrix4",
+				"core/Face3"
+			],
+			"ImageUtils": [
+				"loaders/ImageLoader",
+				"textures/Texture",
+				"textures/DataTexture",
+				"textures/CompressedTexture"
+			],
+			"SceneUtils": [
+				"core/Object3D",
+				"objects/Mesh",
+				"math/Matrix4"
+			],
+			"FontUtils": [
+				"extras/core/Path",
+				"extras/core/Shape"
+			],
+			"core": {
+				"Curve": [],
+				"CurvePath": [
+					"extras/core/Curve",
+					"extras/curves/LineCurve",
+					"math/Vector3",
+					"math/Vector2",
+					"core/Geometry"
+				],
+				"Gyroscope": [
+					"core/Object3D",
+					"math/Vector3",
+					"math/Quaternion"
+				],
+				"Path": [
+					"extras/core/CurvePath",
+					"extras/core/Shape",
+					"extras/curves/LineCurve",
+					"extras/curves/QuadraticBezierCurve",
+					"extras/curves/SplineCurve",
+					"extras/curves/EllipseCurve",
+					"math/Vector2"
+				],
+				"Shape": [
+					"extras/core/Path",
+					"extras/geometries/ExtrudeGeometry",
+					"extras/geometries/ShapeGeometry",
+					"extras/FontUtils"
+				]
+			},
+			"curves": {
+				"LineCurve": [
+					"extras/core/Curve"
+				],
+				"QuadraticBezierCurve": [
+					"extras/core/Curve",
+					"extras/core/Shape",
+					"math/Vector2"
+				],
+				"CubicBezierCurve": [
+					"extras/core/Curve",
+					"extras/core/Shape",
+					"math/Vector2"
+				],
+				"SplineCurve": [
+					"extras/core/Curve",
+					"math/Vector2"
+				],
+				"EllipseCurve": [
+					"extras/core/Curve",
+					"math/Vector2"
+				],
+				"ArcCurve": [
+					"extras/curves/EllipseCurve"
+				],
+				"LineCurve3": [
+					"extras/core/Curve",
+					"math/Vector3"
+				],
+				"QuadraticBezierCurve3": [
+					"extras/core/Curve",
+					"extras/core/Shape",
+					"math/Vector3"
+				],
+				"CubicBezierCurve3": [
+					"extras/core/Curve",
+					"extras/core/Shape",
+					"math/Vector3"
+				],
+				"SplineCurve3": [
+					"extras/core/Curve",
+					"math/Vector3"
+				],
+				"ClosedSplineCurve3": [
+					"extras/core/Curve",
+					"math/Vector3"
+				]
+			},
+			"animation": {
+				"AnimationHandler": [
+					"objects/SkinnedMesh",
+					"math/Quaternion"
+				],
+				"Animation": [
+					"extras/animation/AnimationHandler",
+					"math/Vector3",
+					"math/Quaternion",
+					"objects/Bone"
+				],
+				"KeyFrameAnimation": [
+					"extras/animation/AnimationHandler",
+					"objects/Bone"
+				],
+				"MorphAnimation": []
+			},
+			"cameras": {
+				"CubeCamera": [
+					"core/Object3D",
+					"cameras/PerspectiveCamera",
+					"math/Vector3",
+					"renderers/WebGLRenderTargetCube"
+				],
+				"CombinedCamera": [
+					"cameras/Camera",
+					"cameras/OrthographicCamera",
+					"cameras/PerspectiveCamera",
+					"math/Math"
+				]
+			},
+			"geometries": {
+				"BoxGeometry": [
+					"core/Face3",
+					"core/Geometry",
+					"math/Vector3",
+					"math/Vector2"
+				],
+				"CircleGeometry": [
+					"math/Vector3",
+					"math/Vector2",
+					"math/Sphere",
+					"core/Geometry",
+					"core/Face3"
+				],
+				"CylinderGeometry": [
+					"core/Face3",
+					"core/Geometry",
+					"math/Vector3",
+					"math/Vector2"
+				],
+				"ExtrudeGeometry": [
+					"core/Face3",
+					"core/Geometry",
+					"extras/core/Shape",
+					"extras/geometries/TubeGeometry",
+					"math/Math",
+					"math/Vector2",
+					"math/Vector3"
+				],
+				"ShapeGeometry": [
+					"core/Face3",
+					"core/Geometry",
+					"math/Vector3",
+					"extras/core/Shape",
+					"extras/geometries/ExtrudeGeometry"
+				],
+				"LatheGeometry": [
+					"core/Face3",
+					"core/Geometry",
+					"math/Vector3",
+					"math/Vector2"
+				],
+				"PlaneGeometry": [
+					"core/Face3",
+					"core/Geometry",
+					"math/Vector3",
+					"math/Vector2"
+				],
+				"RingGeometry": [
+					"core/Face3",
+					"core/Geometry",
+					"math/Vector3",
+					"math/Vector2",
+					"math/Sphere"
+				],
+				"SphereGeometry": [
+					"core/Geometry",
+					"core/Face3",
+					"math/Vector3",
+					"math/Vector2",
+					"math/Sphere"
+				],
+				"TextGeometry": [
+					"extras/FontUtils",
+					"extras/geometries/ExtrudeGeometry"
+				],
+				"TorusGeometry": [
+					"core/Face3",
+					"core/Geometry",
+					"math/Vector3",
+					"math/Vector2"
+				],
+				"TorusKnotGeometry": [
+					"core/Face3",
+					"core/Geometry",
+					"math/Vector3",
+					"math/Vector2"
+				],
+				"TubeGeometry": [
+					"core/Face3",
+					"core/Geometry",
+					"math/Vector3",
+					"math/Vector2",
+					"math/Math",
+					"math/Matrix4"
+				],
+				"PolyhedronGeometry": [
+					"core/Face3",
+					"core/Geometry",
+					"math/Vector3",
+					"math/Vector2",
+					"math/Sphere"
+				],
+				"IcosahedronGeometry": [
+					"extras/geometries/PolyhedronGeometry",
+					"core/Geometry"
+				],
+				"OctahedronGeometry": [
+					"extras/geometries/PolyhedronGeometry",
+					"core/Geometry"
+				],
+				"TetrahedronGeometry": [
+					"extras/geometries/PolyhedronGeometry",
+					"core/Geometry"
+				],
+				"ParametricGeometry": [
+					"core/Face3",
+					"core/Geometry",
+					"math/Vector2"
+				]
+			},
+			"helpers": {
+				"AxisHelper": [
+					"core/Geometry",
+					"math/Vector3",
+					"math/Color",
+					"materials/LineBasicMaterial",
+					"objects/Line"
+				],
+				"ArrowHelper": [
+					"core/Object3D",
+					"core/Geometry",
+					"math/Vector3",
+					"math/Matrix4",
+					"objects/Line",
+					"objects/Mesh",
+					"materials/LineBasicMaterial",
+					"materials/MeshBasicMaterial",
+					"extras/geometries/CylinderGeometry"
+				],
+				"BoxHelper": [
+					"math/Vector3",
+					"core/Geometry",
+					"objects/Line",
+					"materials/LineBasicMaterial"
+				],
+				"BoundingBoxHelper": [
+					"math/Box3",
+					"objects/Mesh",
+					"extras/geometries/BoxGeometry",
+					"materials/MeshBasicMaterial"
+				],
+				"CameraHelper": [
+					"core/Geometry",
+					"core/Projector",
+					"materials/LineBasicMaterial",
+					"math/Vector3",
+					"math/Color",
+					"objects/Line",
+					"cameras/Camera"
+				],
+				"DirectionalLightHelper": [
+					"core/Object3D",
+					"core/Geometry",
+					"objects/Mesh",
+					"objects/Line",
+					"math/Vector3",
+					"extras/geometries/PlaneGeometry",
+					"materials/LineBasicMaterial",
+					"materials/MeshBasicMaterial"
+				],
+				"EdgesHelper": [
+					"core/BufferGeometry",
+					"objects/Line",
+					"materials/LineBasicMaterial"
+				],
+				"FaceNormalsHelper": [
+					"core/Geometry",
+					"math/Vector3",
+					"math/Matrix3",
+					"objects/Line",
+					"materials/LineBasicMaterial"
+				],
+				"GridHelper": [
+					"core/Geometry",
+					"materials/LineBasicMaterial",
+					"math/Color",
+					"math/Vector3",
+					"objects/Line"
+				],
+				"HemisphereLightHelper": [
+					"core/Object3D",
+					"math/Color",
+					"math/Matrix4",
+					"math/Vector3",
+					"extras/geometries/SphereGeometry",
+					"materials/MeshBasicMaterial",
+					"objects/Mesh"
+				],
+				"PointLightHelper": [
+					"extras/geometries/SphereGeometry",
+					"materials/MeshBasicMaterial",
+					"objects/Mesh"
+				],
+				"SpotLightHelper": [
+					"core/Object3D",
+					"extras/geometries/CylinderGeometry",
+					"math/Matrix4",
+					"math/Vector3",
+					"materials/MeshBasicMaterial",
+					"objects/Mesh"
+				],
+				"VertexNormalsHelper": [
+					"core/Geometry",
+					"math/Vector3",
+					"math/Matrix3",
+					"objects/Line",
+					"materials/LineBasicMaterial"
+				],
+				"VertexTangentsHelper": [
+					"core/Geometry",
+					"math/Vector3",
+					"objects/Line",
+					"materials/LineBasicMaterial"
+				],
+				"WireframeHelper": [
+					"core/BufferGeometry",
+					"core/Geometry",
+					"objects/Line",
+					"materials/LineBasicMaterial"
+				]
+			},
+			"objects": {
+				"ImmediateRenderObject": [
+					"core/Object3D"
+				],
+				"LensFlare": [
+					"core/Object3D",
+					"math/Vector3",
+					"math/Color"
+				],
+				"MorphBlendMesh": [
+					"objects/Mesh",
+					"math/Math"
+				]
+			},
+			"renderers": {
+				"plugins": {
+					"LensFlarePlugin": [
+						"extras/shaders/ShaderFlares",
+						"math/Vector3",
+						"math/Vector2"
+					],
+					"ShadowMapPlugin": [
+						"math/Frustum",
+						"math/Matrix4",
+						"math/Vector3",
+						"math/Vector2",
+						"renderers/shaders/ShaderLib",
+						"renderers/shaders/UniformsUtils",
+						"renderers/WebGLRenderTarget",
+						"materials/ShaderMaterial",
+						"lights/SpotLight",
+						"lights/DirectionalLight",
+						"cameras/PerspectiveCamera",
+						"cameras/OrthographicCamera",
+						"extras/core/Gyroscope",
+						"extras/helpers/CameraHelper",
+						"objects/Mesh",
+						"objects/ParticleSystem",
+						"objects/SkinnedMesh",
+						"core/BufferGeometry",
+						"core/Projector",
+						"materials/MeshFaceMaterial"
+					],
+					"SpritePlugin": [
+						"textures/Texture",
+						"scenes/Fog",
+						"scenes/FogExp2"
+					],
+					"DepthPassPlugin": [
+						"math/Frustum",
+						"math/Matrix4",
+						"renderers/shaders/ShaderLib",
+						"renderers/shaders/UniformsUtils",
+						"materials/ShaderMaterial",
+						"objects/Mesh",
+						"objects/ParticleSystem",
+						"objects/SkinnedMesh",
+						"core/BufferGeometry",
+						"materials/MeshFaceMaterial"
+					]
+				}
+			},
+			"shaders": {
+				"ShaderFlares": []
+			}
+		}
+	}
+}

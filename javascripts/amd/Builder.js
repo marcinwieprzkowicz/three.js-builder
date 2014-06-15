@@ -267,6 +267,14 @@ define([
 
 			this._preloadModules(modules);
 		}.bind(this));
+
+		// change version
+		event.on(this.element.versionNode, "change", function (evt) {
+			var version = query.getSelected(evt.target);
+
+			this._cleanList();
+			this.loadVersion(version);
+		}.bind(this));
 	};
 
 	/**
@@ -398,6 +406,13 @@ define([
 		this.infoPopup.hide();
 
 		location.href = "data:application/zip;base64," + zip.generate();
+	};
+
+	/**
+	 * @description Cleans modules list DOM node
+	 */
+	Builder.prototype._cleanList = function () {
+		this.element.modulesList.innerHTML = "";
 	};
 
 
