@@ -34,6 +34,7 @@ define([], function () {
 	 * @param  {Array.<string>} modules
 	 */
 	Preloader.prototype.load = function (modules) {
+		this._numberOfLoadedFiles = 0; // reset
 		this._numberOfFiles = modules.length;
 
 		modules.forEach(function (module, index) {
